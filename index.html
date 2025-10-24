@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Class X English Quiz</title>
+<title>Class X English Quiz – 1 Mark Questions</title>
 <style>
   body { font-family: Arial; background: #f8f8ff; padding: 20px; }
   h1 { text-align: center; color: #2c3e50; }
@@ -12,82 +12,159 @@
   button { background: #2e86de; color: #fff; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
   button:hover { background: #1b4f72; }
   #scoreBox { margin-top: 25px; padding: 15px; background: #ecf0f1; border-radius: 10px; text-align: center; font-size: 18px; }
+  #reviewBox { margin-top: 30px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+  .correct { color: green; }
+  .wrong { color: red; }
+  .explanation { margin-top: 8px; font-style: italic; color: #555; }
 </style>
 </head>
 <body>
-<h1>Class X English Quiz</h1>
+<h1>Class X English Quiz – 1 Mark Questions</h1>
+
 <div id="quizContainer"></div>
 <button id="submitBtn">Submit Answers</button>
 <div id="scoreBox" style="display:none;"></div>
+<div id="reviewBox" style="display:none;"></div>
 
 <script>
-// -----------------------------
-// Question Bank (shortened demo set)
-// -----------------------------
-const synonyms = [
-  { sentence: "Choose the most appropriate synonym for the italicised word 'cranky'.", options: ["normal", "strange", "abnormal", "happy"], answer: 1 },
-  { sentence: "Choose the synonym for 'attic'.", options: ["loft", "terrace", "apartment", "strong room"], answer: 0 },
-  { sentence: "Choose the synonym for 'mockingly'.", options: ["disrespectfully", "ridiculously", "jeeringly", "respectfully"], answer: 2 },
-  { sentence: "Choose the synonym for 'gaunt'.", options: ["fat", "round", "lean", "sad"], answer: 2 }
+// Utility: remove duplicates based on question text
+function uniqueBySentence(arr) {
+  const seen = new Set();
+  return arr.filter(q => {
+    if (seen.has(q.sentence)) return false;
+    seen.add(q.sentence);
+    return true;
+  });
+}
+
+// -----------------------------------------
+// MASTER QUESTION BANK (no repetition)
+// -----------------------------------------
+
+// --- SYNONYMS ---
+const synonyms = uniqueBySentence([
+  { sentence: "Choose the synonym for 'affluent'.", options: ["poor", "wealthy", "happy", "sad"], answer: 1, explanation: "'Affluent' means 'rich or wealthy'." },
+  { sentence: "Choose the synonym for 'gaunt'.", options: ["fat", "round", "lean", "sad"], answer: 2, explanation: "'Gaunt' means 'extremely thin' – same as 'lean'." },
+  { sentence: "Choose the synonym for 'bustle'.", options: ["rush", "change", "noise", "confusion"], answer: 0, explanation: "'Bustle' means 'move busily'." },
+  { sentence: "Choose the synonym for 'grapple'.", options: ["settle", "fight", "move", "stop"], answer: 1, explanation: "'Grapple' means 'to struggle or fight'." },
+  { sentence: "Choose the synonym for 'revive'.", options: ["review", "revitalize", "restore", "rescue"], answer: 2, explanation: "'Revive' means 'bring back to life' – same as 'restore'." },
+  { sentence: "Choose the synonym for 'morale'.", options: ["fear", "attitude", "mettle", "confidence"], answer: 3, explanation: "'Morale' means 'confidence or spirit of a group'." },
+  { sentence: "Choose the synonym for 'cranky'.", options: ["normal", "strange", "abnormal", "happy"], answer: 1, explanation: "'Cranky' means 'strange or eccentric'." },
+  { sentence: "Choose the synonym for 'innately'.", options: ["fully", "collectively", "naturally", "specially"], answer: 2, explanation: "'Innately' means 'by nature; naturally'." },
+  { sentence: "Choose the synonym for 'swooped'.", options: ["leap", "rush", "move very quickly", "ascend"], answer: 2, explanation: "'Swooped' means 'moved quickly downward'." },
+  { sentence: "Choose the synonym for 'indigenously'.", options: ["domestically", "spuriously", "globally", "unsafely"], answer: 0, explanation: "'Indigenously' means 'locally or domestically made'." },
+]);
+
+// --- ANTONYMS ---
+const antonyms = uniqueBySentence([
+  { sentence: "Choose the antonym for 'inclusive'.", options: ["enclosed", "detached", "opened", "united"], answer: 1, explanation: "'Inclusive' means 'including all'; 'detached' means 'separate'." },
+  { sentence: "Choose the antonym for 'soothing'.", options: ["pleasing", "relaxing", "disturbing", "burning"], answer: 2, explanation: "'Soothing' (calming) opposite is 'disturbing'." },
+  { sentence: "Choose the antonym for 'repulsion'.", options: ["attraction", "distaste", "hate", "horror"], answer: 0, explanation: "'Repulsion' opposite is 'attraction'." },
+  { sentence: "Choose the antonym for 'indulged'.", options: ["took part", "participated", "abstained", "yielded"], answer: 2, explanation: "'Indulged' opposite is 'abstained'." },
+  { sentence: "Choose the antonym for 'cowardice'.", options: ["strength", "bravery", "courage", "lack of bravery"], answer: 1, explanation: "'Cowardice' opposite is 'bravery'." },
+  { sentence: "Choose the antonym for 'mockingly'.", options: ["disrespectfully", "jeeringly", "rudely", "respectfully"], answer: 3, explanation: "Opposite of 'mockingly' is 'respectfully'." },
+  { sentence: "Choose the antonym for 'cloistered'.", options: ["enclosed", "detached", "opened", "united"], answer: 2, explanation: "'Cloistered' means 'isolated'; opposite 'opened'." },
+  { sentence: "Choose the antonym for 'frustrating'.", options: ["pleasing", "annoying", "difficult", "boring"], answer: 0, explanation: "'Frustrating' (annoying) opposite is 'pleasing'." },
+  { sentence: "Choose the antonym for 'gloomy'.", options: ["dark", "bright", "sad", "pale"], answer: 1, explanation: "'Gloomy' opposite is 'bright'." },
+  { sentence: "Choose the antonym for 'despondent'.", options: ["angry", "happy", "careless", "strong"], answer: 1, explanation: "'Despondent' means 'sad'; opposite 'happy'." },
+]);
+
+// --- PLURALS ---
+const plurals = uniqueBySentence([
+  { sentence: "Plural form of 'alga'.", options: ["algas", "algae", "algum", "algi"], answer: 1, explanation: "'Alga' → 'algae'." },
+  { sentence: "Plural form of 'loaf'.", options: ["loafs", "loaves", "loavs", "loafes"], answer: 1, explanation: "'Loaf' → 'loaves'." },
+  { sentence: "Plural form of 'deer'.", options: ["deers", "deer", "dears", "deeres"], answer: 1, explanation: "Same word: 'deer' → 'deer'." },
+  { sentence: "Plural form of 'syllabus'.", options: ["syllabi", "syllabuses", "syllables", "syllabus"], answer: 0, explanation: "Latin plural: 'syllabi'." },
+  { sentence: "Plural form of 'child'.", options: ["children", "childs", "childrens", "childes"], answer: 0, explanation: "Irregular plural: 'children'." },
+  { sentence: "Plural form of 'goose'.", options: ["geese", "gooses", "goos", "goose"], answer: 0, explanation: "Irregular plural: 'goose' → 'geese'." },
+  { sentence: "Plural form of 'analysis'.", options: ["analyses", "analysises", "analysis", "analysies"], answer: 0, explanation: "'Analysis' → 'analyses'." },
+]);
+
+// --- PREFIXES / SUFFIXES ---
+const prefixesSuffixes = uniqueBySentence([
+  { sentence: "Add a prefix to make the opposite of 'appear'.", options: ["un", "dis", "mis", "in"], answer: 1, explanation: "'Appear' → 'disappear'." },
+  { sentence: "Add a prefix to 'able' to make it negative.", options: ["in", "dis", "un", "mis"], answer: 0, explanation: "'Able' → 'inable' or 'unable'." },
+  { sentence: "Add a prefix to 'understand' to make opposite.", options: ["dis", "in", "mis", "un"], answer: 2, explanation: "'Understand' → 'misunderstand'." },
+  { sentence: "Form a derivative by adding the right suffix to 'document'.", options: ["–ory", "–ise", "–ation", "–ly"], answer: 2, explanation: "'Document' → 'documentation'." },
+  { sentence: "Form a derivative by adding the right suffix to 'fashion__'.", options: ["ly", "able", "ty", "tion"], answer: 1, explanation: "'Fashion' → 'fashionable'." },
+  { sentence: "Add a prefix to 'activate' to make opposite.", options: ["en", "non", "de", "dis"], answer: 2, explanation: "'Activate' → 'deactivate'." },
+]);
+
+// --- ABBREVIATIONS ---
+const abbreviations = uniqueBySentence([
+  { sentence: "Expansion of 'SIM'.", options: ["Subscriber Information Module", "Subscriber Identification Module", "Student Identification Module", "School Identification Module"], answer: 1, explanation: "SIM = Subscriber Identification Module." },
+  { sentence: "Expansion of 'MRI'.", options: ["Magnified Resonance Imaging", "Magnified Reasoning Imagery", "Magnetic Resonance Imaging", "Magnetic Resonance Imagery"], answer: 2, explanation: "MRI = Magnetic Resonance Imaging." },
+  { sentence: "Expansion of 'IMF'.", options: ["Indian Monetary Fund", "International Mutual Fund", "International Monetary Fund", "Indian Mutual Fund"], answer: 2, explanation: "IMF = International Monetary Fund." },
+  { sentence: "Expansion of 'CBI'.", options: ["Central Bureau of Investigation", "Central Bank of India", "Central Bureau of Investors", "Central Board of Intelligence"], answer: 0, explanation: "CBI = Central Bureau of Investigation." },
+  { sentence: "Expansion of 'GPS'.", options: ["Global Positioning System", "Global Protective System", "General Police System", "Global Pointing Structure"], answer: 0, explanation: "GPS = Global Positioning System." },
+]);
+
+// --- PHRASAL VERBS ---
+const phrasalVerbs = uniqueBySentence([
+  { sentence: "The crew ________ of water and food before completing their expedition.", options: ["ran on", "ran about", "ran in", "ran out"], answer: 3, explanation: "'Ran out of' means 'used up'." },
+  { sentence: "It helps to ________ the calories.", options: ["warm up", "stretch out", "put on", "burn off"], answer: 3, explanation: "'Burn off' = use energy/calories." },
+  { sentence: "The company will ________ next week.", options: ["take off", "shut down", "run out", "carry on"], answer: 1, explanation: "'Shut down' = close temporarily." },
+]);
+
+// --- COMPOUND WORDS ---
+const compoundWords = uniqueBySentence([
+  { sentence: "Pair with 'watch' to form compound word.", options: ["hall", "house", "man", "clock"], answer: 2, explanation: "'Watchman' is correct compound." },
+  { sentence: "Pair with 'traffic' to form compound word.", options: ["police", "signal", "jam", "light"], answer: 2, explanation: "'Traffic jam' is correct." },
+  { sentence: "Pair with 'green' to form compound word.", options: ["dress", "house", "glass", "pen"], answer: 1, explanation: "'Greenhouse' is compound." },
+]);
+
+// --- PREPOSITIONS ---
+const prepositions = uniqueBySentence([
+  { sentence: "There was pin drop silence ____ the room.", options: ["in", "to", "near", "with"], answer: 0, explanation: "We say 'in the room'." },
+  { sentence: "Mulan heard this ____ her tent.", options: ["by", "from", "at", "for"], answer: 1, explanation: "'From her tent' is correct." },
+  { sentence: "The fox jumped ____ the well.", options: ["on", "to", "into", "with"], answer: 2, explanation: "'Jumped into the well'." },
+]);
+
+// --- TENSE ---
+const tense = uniqueBySentence([
+  { sentence: "After he ____ his lunch, he went to the window.", options: ["will finish", "finish", "was finishing", "had finished"], answer: 3, explanation: "Past perfect precedes past simple." },
+  { sentence: "The governor was ____ at the wit of the youth.", options: ["pleases", "pleasing", "pleased", "please"], answer: 2, explanation: "Past form 'was pleased'." },
+  { sentence: "If I were a millionaire, I ____ the needy.", options: ["would help", "will help", "would have helped", "can help"], answer: 0, explanation: "Second conditional uses 'would help'." },
+]);
+
+// --- LINKERS ---
+const linkers = uniqueBySentence([
+  { sentence: "____ he is ninety years old, he is in the pink of health.", options: ["When", "Since", "Even though", "Yet"], answer: 2, explanation: "Contrast clause uses 'Even though'." },
+  { sentence: "____ winter comes, he gets worried.", options: ["Though", "But", "How", "Whenever"], answer: 3, explanation: "'Whenever' shows repetition." },
+  { sentence: "____ I looked up, I saw Mr. Hamel sitting motionless.", options: ["When", "But", "How", "Whenever"], answer: 0, explanation: "Time link: 'When'." },
+]);
+
+// -----------------------------------------
+// COMBINED POOL AND QUIZ LOGIC
+// -----------------------------------------
+
+const allQuestions = [
+  ...synonyms,
+  ...antonyms,
+  ...plurals,
+  ...prefixesSuffixes,
+  ...abbreviations,
+  ...phrasalVerbs,
+  ...compoundWords,
+  ...prepositions,
+  ...tense,
+  ...linkers
 ];
 
-const antonyms = [
-  { sentence: "Choose the antonym for 'inclusive'.", options: ["enclosed", "detached", "opened", "united"], answer: 1 },
-  { sentence: "Choose the antonym for 'soothing'.", options: ["pleasing", "relaxing", "disturbing", "burning"], answer: 2 },
-  { sentence: "Choose the antonym for 'repulsion'.", options: ["attraction", "distaste", "hate", "horror"], answer: 0 },
-  { sentence: "Choose the antonym for 'indulged'.", options: ["took part", "participated", "abstained", "yielded"], answer: 2 }
-];
-
-const plurals = [
-  { sentence: "Choose the correct plural form of 'alga'.", options: ["algum", "algi", "algae", "algas"], answer: 2 },
-  { sentence: "Choose the correct plural form of 'hero'.", options: ["heros", "heroes", "heross", "heroses"], answer: 1 }
-];
-
-const prefixesSuffixes = [
-  { sentence: "Form a derivative by adding the right suffix to the word 'document'.", options: ["–ory", "–ise", "–ation", "–ly"], answer: 2 },
-  { sentence: "Add a prefix to 'able' to make it negative.", options: ["in", "dis", "un", "mis"], answer: 0 }
-];
-
-const abbreviations = [
-  { sentence: "Choose the correct expansion of the abbreviation 'SIM'.", options: ["Subscriber Information Module", "Subscriber Identification Module", "Student Identification Module", "School Identification Module"], answer: 1 },
-  { sentence: "Choose the correct expansion of 'MRI'.", options: ["Magnified Resonance Imaging", "Magnified Reasoning Imagery", "Magnetic Resonance Imaging", "Magnetic Resonance Imagery"], answer: 2 }
-];
-
-const grammar = [
-  { sentence: "Fill in the blank: There was pin drop silence ____ the room.", options: ["in", "to", "near", "with"], answer: 0 },
-  { sentence: "Choose the correct linker: ____ winter comes, he gets worried.", options: ["Though", "But", "How", "Whenever"], answer: 3 }
-];
-
-// -----------------------------
-// Select Questions: 3 Synonyms, 3 Antonyms, 1 from others
-// -----------------------------
+// Shuffle & pick random questions
 function pickRandom(arr, count) {
-  const shuffled = arr.sort(() => 0.5 - Math.random());
+  const shuffled = [...arr].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
 }
 
-const selectedQuestions = [
-  ...pickRandom(synonyms, 3),
-  ...pickRandom(antonyms, 3),
-  pickRandom(plurals, 1)[0],
-  pickRandom(prefixesSuffixes, 1)[0],
-  pickRandom(abbreviations, 1)[0],
-  pickRandom(grammar, 5)[0], // ensures total 14
-  pickRandom(grammar, 1)[0],
-  pickRandom(grammar, 1)[0],
-  pickRandom(grammar, 1)[0],
-  pickRandom(grammar, 1)[0]
-].slice(0,14);
+const selectedQuestions = pickRandom(allQuestions, 14);
 
-// -----------------------------
-// Render Questions
-// -----------------------------
-const quizContainer = document.getElementById('quizContainer');
-
+// Render
+const quizContainer = document.getElementById("quizContainer");
 selectedQuestions.forEach((q, i) => {
-  const div = document.createElement('div');
-  div.classList.add('question-box');
-  let html = `<h3>Q${i+1}. ${q.sentence}</h3><div class="options">`;
+  const div = document.createElement("div");
+  div.classList.add("question-box");
+  let html = `<h3>Q${i + 1}. ${q.sentence}</h3><div class="options">`;
   q.options.forEach((opt, j) => {
     html += `<label><input type="radio" name="q${i}" value="${j}"> ${opt}</label>`;
   });
@@ -96,16 +173,31 @@ selectedQuestions.forEach((q, i) => {
   quizContainer.appendChild(div);
 });
 
-// -----------------------------
-// Submit and Score
-// -----------------------------
-document.getElementById('submitBtn').addEventListener('click', () => {
+// Submit logic with review
+document.getElementById("submitBtn").addEventListener("click", () => {
   let score = 0;
+  let reviewHTML = "<h2>Review Section</h2>";
+
   selectedQuestions.forEach((q, i) => {
-    const selected = document.querySelector(`input[name="q${i}"]:checked`);
-    if (selected && parseInt(selected.value) === q.answer) score++;
+    const selected = document.querySelector(`input[name='q${i}']:checked`);
+    const userAnswer = selected ? parseInt(selected.value) : null;
+    const correct = userAnswer === q.answer;
+    if (correct) score++;
+
+    reviewHTML += `
+      <div>
+        <strong>Q${i + 1}. ${q.sentence}</strong><br>
+        <span class="${correct ? "correct" : "wrong"}">
+          Your Answer: ${userAnswer !== null ? q.options[userAnswer] : "Not Attempted"} ${correct ? "✅" : "❌"}
+        </span><br>
+        <span class="correct">Correct Answer: ${q.options[q.answer]}</span>
+        <div class="explanation">${q.explanation}</div>
+      </div><hr>
+    `;
   });
 
+  const box = document.getElementById("scoreBox");
+  box.style.display = "block";
   let remark = "";
   if (score === 14) remark = "Excellent!";
   else if (score >= 10) remark = "Very Good!";
@@ -114,9 +206,14 @@ document.getElementById('submitBtn').addEventListener('click', () => {
   else if (score >= 3) remark = "Poor!";
   else remark = "Very Poor!";
 
-  const box = document.getElementById('scoreBox');
-  box.style.display = "block";
   box.innerHTML = `<strong>Score: ${score} / 14</strong><br>${remark}`;
+
+  const reviewBox = document.getElementById("reviewBox");
+  reviewBox.style.display = "block";
+  reviewBox.innerHTML = reviewHTML;
+
+  // Scroll smoothly to review
+  reviewBox.scrollIntoView({ behavior: "smooth" });
 });
 </script>
 </body>
