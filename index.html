@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class X English Quiz</title>
+<style>
+  body { font-family: Arial; background: #f8f8ff; padding: 20px; }
+  h1 { text-align: center; color: #2c3e50; }
+  .question-box { background: #fff; border-radius: 10px; padding: 20px; margin: 15px 0; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+  .options label { display: block; margin: 5px 0; }
+  button { background: #2e86de; color: #fff; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
+  button:hover { background: #1b4f72; }
+  #scoreBox { margin-top: 25px; padding: 15px; background: #ecf0f1; border-radius: 10px; text-align: center; font-size: 18px; }
+</style>
+</head>
+<body>
+<h1>Class X English Quiz</h1>
+<div id="quizContainer"></div>
+<button id="submitBtn">Submit Answers</button>
+<div id="scoreBox" style="display:none;"></div>
+
+<script>
+// -----------------------------
+// Question Bank (shortened demo set)
+// -----------------------------
+const synonyms = [
+  { sentence: "Choose the most appropriate synonym for the italicised word 'cranky'.", options: ["normal", "strange", "abnormal", "happy"], answer: 1 },
+  { sentence: "Choose the synonym for 'attic'.", options: ["loft", "terrace", "apartment", "strong room"], answer: 0 },
+  { sentence: "Choose the synonym for 'mockingly'.", options: ["disrespectfully", "ridiculously", "jeeringly", "respectfully"], answer: 2 },
+  { sentence: "Choose the synonym for 'gaunt'.", options: ["fat", "round", "lean", "sad"], answer: 2 }
+];
+
+const antonyms = [
+  { sentence: "Choose the antonym for 'inclusive'.", options: ["enclosed", "detached", "opened", "united"], answer: 1 },
+  { sentence: "Choose the antonym for 'soothing'.", options: ["pleasing", "relaxing", "disturbing", "burning"], answer: 2 },
+  { sentence: "Choose the antonym for 'repulsion'.", options: ["attraction", "distaste", "hate", "horror"], answer: 0 },
+  { sentence: "Choose the antonym for 'indulged'.", options: ["took part", "participated", "abstained", "yielded"], answer: 2 }
+];
+
+const plurals = [
+  { sentence: "Choose the correct plural form of 'alga'.", options: ["algum", "algi", "algae", "algas"], answer: 2 },
+  { sentence: "Choose the correct plural form of 'hero'.", options: ["heros", "heroes", "heross", "heroses"], answer: 1 }
+];
+
+const prefixesSuffixes = [
+  { sentence: "Form a derivative by adding the right suffix to the word 'document'.", options: ["–ory", "–ise", "–ation", "–ly"], answer: 2 },
+  { sentence: "Add a prefix to 'able' to make it negative.", options: ["in", "dis", "un", "mis"], answer: 0 }
+];
+
+const abbreviations = [
+  { sentence: "Choose the correct expansion of the abbreviation 'SIM'.", options: ["Subscriber Information Module", "Subscriber Identification Module", "Student Identification Module", "School Identification Module"], answer: 1 },
+  { sentence: "Choose the correct expansion of 'MRI'.", options: ["Magnified Resonance Imaging", "Magnified Reasoning Imagery", "Magnetic Resonance Imaging", "Magnetic Resonance Imagery"], answer: 2 }
+];
+
+const grammar = [
+  { sentence: "Fill in the blank: There was pin drop silence ____ the room.", options: ["in", "to", "near", "with"], answer: 0 },
+  { sentence: "Choose the correct linker: ____ winter comes, he gets worried.", options: ["Though", "But", "How", "Whenever"], answer: 3 }
+];
+
+// -----------------------------
+// Select Questions: 3 Synonyms, 3 Antonyms, 1 from others
+// -----------------------------
+function pickRandom(arr, count) {
+  const shuffled = arr.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
+const selectedQuestions = [
+  ...pickRandom(synonyms, 3),
+  ...pickRandom(antonyms, 3),
+  pickRandom(plurals, 1)[0],
+  pickRandom(prefixesSuffixes, 1)[0],
+  pickRandom(abbreviations, 1)[0],
+  pickRandom(grammar, 5)[0], // ensures total 14
+  pickRandom(grammar, 1)[0],
+  pickRandom(grammar, 1)[0],
+  pickRandom(grammar, 1)[0],
+  pickRandom(grammar, 1)[0]
+].slice(0,14);
+
+// -----------------------------
+// Render Questions
+// -----------------------------
+const quizContainer = document.getElementById('quizContainer');
+
+selectedQuestions.forEach((q, i) => {
+  const div = document.createElement('div');
+  div.classList.add('question-box');
+  let html = `<h3>Q${i+1}. ${q.sentence}</h3><div class="options">`;
+  q.options.forEach((opt, j) => {
+    html += `<label><input type="radio" name="q${i}" value="${j}"> ${opt}</label>`;
+  });
+  html += "</div>";
+  div.innerHTML = html;
+  quizContainer.appendChild(div);
+});
+
+// -----------------------------
+// Submit and Score
+// -----------------------------
+document.getElementById('submitBtn').addEventListener('click', () => {
+  let score = 0;
+  selectedQuestions.forEach((q, i) => {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    if (selected && parseInt(selected.value) === q.answer) score++;
+  });
+
+  let remark = "";
+  if (score === 14) remark = "Excellent!";
+  else if (score >= 10) remark = "Very Good!";
+  else if (score >= 8) remark = "Good!";
+  else if (score >= 5) remark = "Average!";
+  else if (score >= 3) remark = "Poor!";
+  else remark = "Very Poor!";
+
+  const box = document.getElementById('scoreBox');
+  box.style.display = "block";
+  box.innerHTML = `<strong>Score: ${score} / 14</strong><br>${remark}`;
+});
+</script>
+</body>
+</html>
