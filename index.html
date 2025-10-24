@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Class X English Quiz – 1 Mark Questions</title>
 <style>
-  body { font-family: Arial; background: #f8f8ff; padding: 20px; }
+  body { font-family: Arial, sans-serif; background: #f8f8ff; padding: 20px; }
   h1 { text-align: center; color: #2c3e50; }
   .question-box { background: #fff; border-radius: 10px; padding: 20px; margin: 15px 0; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
-  .options label { display: block; margin: 5px 0; }
+  .options label { display: block; margin: 6px 0; line-height: 1.3; }
   button { background: #2e86de; color: #fff; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
   button:hover { background: #1b4f72; }
   #scoreBox { margin-top: 25px; padding: 15px; background: #ecf0f1; border-radius: 10px; text-align: center; font-size: 18px; }
   #reviewBox { margin-top: 30px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
-  .correct { color: green; }
-  .wrong { color: red; }
+  .correct { color: #1b8a2f; }
+  .wrong { color: #b00020; }
   .explanation { margin-top: 8px; font-style: italic; color: #555; }
 </style>
 </head>
@@ -27,7 +27,9 @@
 <div id="reviewBox" style="display:none;"></div>
 
 <script>
-// Utility: remove duplicates based on question text
+// -----------------------------------------
+// Utilities
+// -----------------------------------------
 function uniqueBySentence(arr) {
   const seen = new Set();
   return arr.filter(q => {
@@ -37,57 +39,70 @@ function uniqueBySentence(arr) {
   });
 }
 
+// Fisher–Yates shuffle + slice
+function pickRandom(arr, count) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a.slice(0, Math.min(count, a.length));
+}
+
 // -----------------------------------------
-// MASTER QUESTION BANK (no repetition)
+// MASTER QUESTION BANKS (deduped, with explanations)
+// Sections: synonyms, antonyms, plurals, prefixes/suffixes,
+// abbreviations, phrasal verbs, compound words, prepositions,
+// tense, linkers
 // -----------------------------------------
 
 // --- SYNONYMS ---
 const synonyms = uniqueBySentence([
-  { sentence: "Choose the synonym for 'affluent'.", options: ["poor", "wealthy", "happy", "sad"], answer: 1, explanation: "'Affluent' means 'rich or wealthy'." },
-  { sentence: "Choose the synonym for 'gaunt'.", options: ["fat", "round", "lean", "sad"], answer: 2, explanation: "'Gaunt' means 'extremely thin' – same as 'lean'." },
-  { sentence: "Choose the synonym for 'bustle'.", options: ["rush", "change", "noise", "confusion"], answer: 0, explanation: "'Bustle' means 'move busily'." },
-  { sentence: "Choose the synonym for 'grapple'.", options: ["settle", "fight", "move", "stop"], answer: 1, explanation: "'Grapple' means 'to struggle or fight'." },
-  { sentence: "Choose the synonym for 'revive'.", options: ["review", "revitalize", "restore", "rescue"], answer: 2, explanation: "'Revive' means 'bring back to life' – same as 'restore'." },
-  { sentence: "Choose the synonym for 'morale'.", options: ["fear", "attitude", "mettle", "confidence"], answer: 3, explanation: "'Morale' means 'confidence or spirit of a group'." },
-  { sentence: "Choose the synonym for 'cranky'.", options: ["normal", "strange", "abnormal", "happy"], answer: 1, explanation: "'Cranky' means 'strange or eccentric'." },
-  { sentence: "Choose the synonym for 'innately'.", options: ["fully", "collectively", "naturally", "specially"], answer: 2, explanation: "'Innately' means 'by nature; naturally'." },
-  { sentence: "Choose the synonym for 'swooped'.", options: ["leap", "rush", "move very quickly", "ascend"], answer: 2, explanation: "'Swooped' means 'moved quickly downward'." },
-  { sentence: "Choose the synonym for 'indigenously'.", options: ["domestically", "spuriously", "globally", "unsafely"], answer: 0, explanation: "'Indigenously' means 'locally or domestically made'." },
+  { sentence: "Choose the synonym for 'affluent'.", options: ["poor", "wealthy", "happy", "sad"], answer: 1, explanation: "'Affluent' means 'rich; wealthy'." },
+  { sentence: "Choose the synonym for 'gaunt'.", options: ["fat", "round", "lean", "sad"], answer: 2, explanation: "'Gaunt' = extremely thin; 'lean'." },
+  { sentence: "Choose the synonym for 'bustle'.", options: ["rush", "change", "noise", "confusion"], answer: 0, explanation: "'Bustle' = move busily/energetically → 'rush'." },
+  { sentence: "Choose the synonym for 'grapple'.", options: ["settle", "fight", "move", "stop"], answer: 1, explanation: "'Grapple' = struggle; wrestle; fight." },
+  { sentence: "Choose the synonym for 'revive'.", options: ["review", "revitalize", "restore", "rescue"], answer: 2, explanation: "'Revive' = bring back to life → 'restore'." },
+  { sentence: "Choose the synonym for 'morale'.", options: ["fear", "attitude", "mettle", "confidence"], answer: 3, explanation: "'Morale' = confidence/spirit of a group." },
+  { sentence: "Choose the synonym for 'cranky'.", options: ["normal", "strange", "abnormal", "happy"], answer: 1, explanation: "'Cranky' = odd; strange in behaviour." },
+  { sentence: "Choose the synonym for 'innately'.", options: ["fully", "collectively", "naturally", "specially"], answer: 2, explanation: "'Innately' = naturally; by nature." },
+  { sentence: "Choose the synonym for 'swooped'.", options: ["leap", "rush", "move very quickly", "ascend"], answer: 2, explanation: "'Swooped' = moved quickly downward/through air." },
+  { sentence: "Choose the synonym for 'indigenously'.", options: ["domestically", "spuriously", "globally", "unsafely"], answer: 0, explanation: "'Indigenously' = produced domestically/locally." },
 ]);
 
 // --- ANTONYMS ---
 const antonyms = uniqueBySentence([
-  { sentence: "Choose the antonym for 'inclusive'.", options: ["enclosed", "detached", "opened", "united"], answer: 1, explanation: "'Inclusive' means 'including all'; 'detached' means 'separate'." },
-  { sentence: "Choose the antonym for 'soothing'.", options: ["pleasing", "relaxing", "disturbing", "burning"], answer: 2, explanation: "'Soothing' (calming) opposite is 'disturbing'." },
-  { sentence: "Choose the antonym for 'repulsion'.", options: ["attraction", "distaste", "hate", "horror"], answer: 0, explanation: "'Repulsion' opposite is 'attraction'." },
-  { sentence: "Choose the antonym for 'indulged'.", options: ["took part", "participated", "abstained", "yielded"], answer: 2, explanation: "'Indulged' opposite is 'abstained'." },
-  { sentence: "Choose the antonym for 'cowardice'.", options: ["strength", "bravery", "courage", "lack of bravery"], answer: 1, explanation: "'Cowardice' opposite is 'bravery'." },
+  { sentence: "Choose the antonym for 'inclusive'.", options: ["enclosed", "detached", "opened", "united"], answer: 1, explanation: "'Inclusive' (including all) ↔ 'detached' (separate)." },
+  { sentence: "Choose the antonym for 'soothing'.", options: ["pleasing", "relaxing", "disturbing", "burning"], answer: 2, explanation: "'Soothing' (calming) ↔ 'disturbing'." },
+  { sentence: "Choose the antonym for 'repulsion'.", options: ["attraction", "distaste", "hate", "horror"], answer: 0, explanation: "'Repulsion' ↔ 'attraction'." },
+  { sentence: "Choose the antonym for 'indulged'.", options: ["took part", "participated", "abstained", "yielded"], answer: 2, explanation: "'Indulged' ↔ 'abstained'." },
+  { sentence: "Choose the antonym for 'cowardice'.", options: ["strength", "bravery", "courage", "lack of bravery"], answer: 1, explanation: "'Cowardice' ↔ 'bravery'." },
   { sentence: "Choose the antonym for 'mockingly'.", options: ["disrespectfully", "jeeringly", "rudely", "respectfully"], answer: 3, explanation: "Opposite of 'mockingly' is 'respectfully'." },
-  { sentence: "Choose the antonym for 'cloistered'.", options: ["enclosed", "detached", "opened", "united"], answer: 2, explanation: "'Cloistered' means 'isolated'; opposite 'opened'." },
-  { sentence: "Choose the antonym for 'frustrating'.", options: ["pleasing", "annoying", "difficult", "boring"], answer: 0, explanation: "'Frustrating' (annoying) opposite is 'pleasing'." },
-  { sentence: "Choose the antonym for 'gloomy'.", options: ["dark", "bright", "sad", "pale"], answer: 1, explanation: "'Gloomy' opposite is 'bright'." },
-  { sentence: "Choose the antonym for 'despondent'.", options: ["angry", "happy", "careless", "strong"], answer: 1, explanation: "'Despondent' means 'sad'; opposite 'happy'." },
+  { sentence: "Choose the antonym for 'cloistered'.", options: ["enclosed", "detached", "opened", "united"], answer: 2, explanation: "'Cloistered' (secluded) ↔ 'opened'." },
+  { sentence: "Choose the antonym for 'frustrating'.", options: ["pleasing", "annoying", "difficult", "boring"], answer: 0, explanation: "'Frustrating' ↔ 'pleasing'." },
+  { sentence: "Choose the antonym for 'gloomy'.", options: ["dark", "bright", "sad", "pale"], answer: 1, explanation: "'Gloomy' ↔ 'bright'." },
+  { sentence: "Choose the antonym for 'despondent'.", options: ["angry", "happy", "careless", "strong"], answer: 1, explanation: "'Despondent' (dejected) ↔ 'happy'." },
 ]);
 
 // --- PLURALS ---
 const plurals = uniqueBySentence([
-  { sentence: "Plural form of 'alga'.", options: ["algas", "algae", "algum", "algi"], answer: 1, explanation: "'Alga' → 'algae'." },
+  { sentence: "Plural form of 'alga'.", options: ["algas", "algae", "algum", "algi"], answer: 1, explanation: "'Alga' → 'algae' (Latin plural)." },
   { sentence: "Plural form of 'loaf'.", options: ["loafs", "loaves", "loavs", "loafes"], answer: 1, explanation: "'Loaf' → 'loaves'." },
-  { sentence: "Plural form of 'deer'.", options: ["deers", "deer", "dears", "deeres"], answer: 1, explanation: "Same word: 'deer' → 'deer'." },
-  { sentence: "Plural form of 'syllabus'.", options: ["syllabi", "syllabuses", "syllables", "syllabus"], answer: 0, explanation: "Latin plural: 'syllabi'." },
-  { sentence: "Plural form of 'child'.", options: ["children", "childs", "childrens", "childes"], answer: 0, explanation: "Irregular plural: 'children'." },
-  { sentence: "Plural form of 'goose'.", options: ["geese", "gooses", "goos", "goose"], answer: 0, explanation: "Irregular plural: 'goose' → 'geese'." },
+  { sentence: "Plural form of 'deer'.", options: ["deers", "deer", "dears", "deeres"], answer: 1, explanation: "Same form singular/plural: 'deer'." },
+  { sentence: "Plural form of 'syllabus'.", options: ["syllabi", "syllabuses", "syllables", "syllabus"], answer: 0, explanation: "Accepted plurals: 'syllabi' / 'syllabuses' (here: 'syllabi')." },
+  { sentence: "Plural form of 'child'.", options: ["children", "childs", "childrens", "childes"], answer: 0, explanation: "'Child' → 'children'." },
+  { sentence: "Plural form of 'goose'.", options: ["geese", "gooses", "goos", "goose"], answer: 0, explanation: "'Goose' → 'geese'." },
   { sentence: "Plural form of 'analysis'.", options: ["analyses", "analysises", "analysis", "analysies"], answer: 0, explanation: "'Analysis' → 'analyses'." },
 ]);
 
 // --- PREFIXES / SUFFIXES ---
 const prefixesSuffixes = uniqueBySentence([
   { sentence: "Add a prefix to make the opposite of 'appear'.", options: ["un", "dis", "mis", "in"], answer: 1, explanation: "'Appear' → 'disappear'." },
-  { sentence: "Add a prefix to 'able' to make it negative.", options: ["in", "dis", "un", "mis"], answer: 0, explanation: "'Able' → 'inable' or 'unable'." },
-  { sentence: "Add a prefix to 'understand' to make opposite.", options: ["dis", "in", "mis", "un"], answer: 2, explanation: "'Understand' → 'misunderstand'." },
-  { sentence: "Form a derivative by adding the right suffix to 'document'.", options: ["–ory", "–ise", "–ation", "–ly"], answer: 2, explanation: "'Document' → 'documentation'." },
-  { sentence: "Form a derivative by adding the right suffix to 'fashion__'.", options: ["ly", "able", "ty", "tion"], answer: 1, explanation: "'Fashion' → 'fashionable'." },
-  { sentence: "Add a prefix to 'activate' to make opposite.", options: ["en", "non", "de", "dis"], answer: 2, explanation: "'Activate' → 'deactivate'." },
+  { sentence: "Add a prefix to 'able' to make it negative.", options: ["in", "dis", "un", "mis"], answer: 2, explanation: "'Able' → 'unable' (negative prefix 'un-')." },
+  { sentence: "Add a prefix to 'understand' to make its opposite.", options: ["dis", "in", "mis", "un"], answer: 2, explanation: "'Understand' → 'misunderstand'." },
+  { sentence: "Form a derivative by adding the right suffix to 'document'.", options: ["–ory", "–ise", "–ation", "–ly"], answer: 2, explanation: "'Document' → 'documentation' (noun)." },
+  { sentence: "Form a derivative by adding the right suffix to 'fashion__'.", options: ["ly", "able", "ty", "tion"], answer: 1, explanation: "'Fashion' → 'fashionable' (adjective)." },
+  { sentence: "Add a prefix to 'activate' to make the opposite.", options: ["en", "non", "de", "dis"], answer: 2, explanation: "'Activate' → 'deactivate'." },
 ]);
 
 // --- ABBREVIATIONS ---
@@ -101,65 +116,61 @@ const abbreviations = uniqueBySentence([
 
 // --- PHRASAL VERBS ---
 const phrasalVerbs = uniqueBySentence([
-  { sentence: "The crew ________ of water and food before completing their expedition.", options: ["ran on", "ran about", "ran in", "ran out"], answer: 3, explanation: "'Ran out of' means 'used up'." },
+  { sentence: "The crew ________ of water and food before completing their expedition.", options: ["ran on", "ran about", "ran in", "ran out"], answer: 3, explanation: "'Ran out of' = used up." },
   { sentence: "It helps to ________ the calories.", options: ["warm up", "stretch out", "put on", "burn off"], answer: 3, explanation: "'Burn off' = use energy/calories." },
   { sentence: "The company will ________ next week.", options: ["take off", "shut down", "run out", "carry on"], answer: 1, explanation: "'Shut down' = close temporarily." },
 ]);
 
 // --- COMPOUND WORDS ---
 const compoundWords = uniqueBySentence([
-  { sentence: "Pair with 'watch' to form compound word.", options: ["hall", "house", "man", "clock"], answer: 2, explanation: "'Watchman' is correct compound." },
-  { sentence: "Pair with 'traffic' to form compound word.", options: ["police", "signal", "jam", "light"], answer: 2, explanation: "'Traffic jam' is correct." },
-  { sentence: "Pair with 'green' to form compound word.", options: ["dress", "house", "glass", "pen"], answer: 1, explanation: "'Greenhouse' is compound." },
+  { sentence: "Pair with 'watch' to form a compound word.", options: ["hall", "house", "man", "clock"], answer: 2, explanation: "'Watchman' is a compound word." },
+  { sentence: "Pair with 'traffic' to form a compound word.", options: ["police", "signal", "jam", "light"], answer: 2, explanation: "'Traffic jam' is a compound." },
+  { sentence: "Pair with 'green' to form a compound word.", options: ["dress", "house", "glass", "pen"], answer: 1, explanation: "'Greenhouse' is a compound." },
 ]);
 
 // --- PREPOSITIONS ---
 const prepositions = uniqueBySentence([
   { sentence: "There was pin drop silence ____ the room.", options: ["in", "to", "near", "with"], answer: 0, explanation: "We say 'in the room'." },
-  { sentence: "Mulan heard this ____ her tent.", options: ["by", "from", "at", "for"], answer: 1, explanation: "'From her tent' is correct." },
-  { sentence: "The fox jumped ____ the well.", options: ["on", "to", "into", "with"], answer: 2, explanation: "'Jumped into the well'." },
+  { sentence: "Mulan heard this ____ her tent.", options: ["by", "from", "at", "for"], answer: 1, explanation: "Correct: 'from her tent'." },
+  { sentence: "The fox jumped ____ the well.", options: ["on", "to", "into", "with"], answer: 2, explanation: "Correct: 'into the well'." },
 ]);
 
 // --- TENSE ---
 const tense = uniqueBySentence([
-  { sentence: "After he ____ his lunch, he went to the window.", options: ["will finish", "finish", "was finishing", "had finished"], answer: 3, explanation: "Past perfect precedes past simple." },
-  { sentence: "The governor was ____ at the wit of the youth.", options: ["pleases", "pleasing", "pleased", "please"], answer: 2, explanation: "Past form 'was pleased'." },
-  { sentence: "If I were a millionaire, I ____ the needy.", options: ["would help", "will help", "would have helped", "can help"], answer: 0, explanation: "Second conditional uses 'would help'." },
+  { sentence: "After he ____ his lunch, he went to the window.", options: ["will finish", "finish", "was finishing", "had finished"], answer: 3, explanation: "Past perfect ('had finished') before a past action." },
+  { sentence: "The governor was ____ at the wit of the youth.", options: ["pleases", "pleasing", "pleased", "please"], answer: 2, explanation: "Past passive/state: 'was pleased'." },
+  { sentence: "If I were a millionaire, I ____ the needy.", options: ["would help", "will help", "would have helped", "can help"], answer: 0, explanation: "Second conditional → 'would help'." },
 ]);
 
 // --- LINKERS ---
 const linkers = uniqueBySentence([
-  { sentence: "____ he is ninety years old, he is in the pink of health.", options: ["When", "Since", "Even though", "Yet"], answer: 2, explanation: "Contrast clause uses 'Even though'." },
-  { sentence: "____ winter comes, he gets worried.", options: ["Though", "But", "How", "Whenever"], answer: 3, explanation: "'Whenever' shows repetition." },
-  { sentence: "____ I looked up, I saw Mr. Hamel sitting motionless.", options: ["When", "But", "How", "Whenever"], answer: 0, explanation: "Time link: 'When'." },
+  { sentence: "____ he is ninety years old, he is in the pink of health.", options: ["When", "Since", "Even though", "Yet"], answer: 2, explanation: "Concession: 'Even though'." },
+  { sentence: "____ winter comes, he gets worried.", options: ["Though", "But", "How", "Whenever"], answer: 3, explanation: "Repeated time: 'Whenever'." },
+  { sentence: "____ I looked up, I saw Mr. Hamel sitting motionless.", options: ["When", "But", "How", "Whenever"], answer: 0, explanation: "Time clause: 'When'." },
 ]);
 
 // -----------------------------------------
-// COMBINED POOL AND QUIZ LOGIC
+// BUILD THE 14 QUESTIONS IN FIXED ORDER (NO ORDER RANDOMISATION)
+// Q1–Q3: Synonyms | Q4–Q6: Antonyms | Q7: Plurals | Q8: Prefix/Suffix
+// Q9: Abbreviations | Q10: Phrasal Verbs | Q11: Compound Words
+// Q12: Prepositions | Q13: Tense | Q14: Linkers
 // -----------------------------------------
-
-const allQuestions = [
-  ...synonyms,
-  ...antonyms,
-  ...plurals,
-  ...prefixesSuffixes,
-  ...abbreviations,
-  ...phrasalVerbs,
-  ...compoundWords,
-  ...prepositions,
-  ...tense,
-  ...linkers
+const selectedQuestions = [
+  ...pickRandom(synonyms, 3),        // Q1–Q3
+  ...pickRandom(antonyms, 3),        // Q4–Q6
+  ...pickRandom(plurals, 1),         // Q7
+  ...pickRandom(prefixesSuffixes, 1),// Q8
+  ...pickRandom(abbreviations, 1),   // Q9
+  ...pickRandom(phrasalVerbs, 1),    // Q10
+  ...pickRandom(compoundWords, 1),   // Q11
+  ...pickRandom(prepositions, 1),    // Q12
+  ...pickRandom(tense, 1),           // Q13
+  ...pickRandom(linkers, 1)          // Q14
 ];
 
-// Shuffle & pick random questions
-function pickRandom(arr, count) {
-  const shuffled = [...arr].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
-}
-
-const selectedQuestions = pickRandom(allQuestions, 14);
-
-// Render
+// -----------------------------------------
+// RENDER
+// -----------------------------------------
 const quizContainer = document.getElementById("quizContainer");
 selectedQuestions.forEach((q, i) => {
   const div = document.createElement("div");
@@ -173,7 +184,9 @@ selectedQuestions.forEach((q, i) => {
   quizContainer.appendChild(div);
 });
 
-// Submit logic with review
+// -----------------------------------------
+// SUBMIT + SCORE + REVIEW
+// -----------------------------------------
 document.getElementById("submitBtn").addEventListener("click", () => {
   let score = 0;
   let reviewHTML = "<h2>Review Section</h2>";
@@ -192,7 +205,8 @@ document.getElementById("submitBtn").addEventListener("click", () => {
         </span><br>
         <span class="correct">Correct Answer: ${q.options[q.answer]}</span>
         <div class="explanation">${q.explanation}</div>
-      </div><hr>
+      </div>
+      <hr>
     `;
   });
 
@@ -211,8 +225,6 @@ document.getElementById("submitBtn").addEventListener("click", () => {
   const reviewBox = document.getElementById("reviewBox");
   reviewBox.style.display = "block";
   reviewBox.innerHTML = reviewHTML;
-
-  // Scroll smoothly to review
   reviewBox.scrollIntoView({ behavior: "smooth" });
 });
 </script>
