@@ -19,7 +19,7 @@
 </style>
 </head>
 <body>
-<h1>Class X English Quiz – 1 Mark Questions</h1>
+<h1>Gtk Class X English Quiz – 1 Mark Questions</h1>
 
 <div id="quizContainer"></div>
 <button id="submitBtn">Submit Answers</button>
@@ -68,6 +68,26 @@ const synonyms = uniqueBySentence([
   { sentence: "Choose the synonym for 'innately'.", options: ["fully", "collectively", "naturally", "specially"], answer: 2, explanation: "'Innately' = naturally; by nature." },
   { sentence: "Choose the synonym for 'swooped'.", options: ["leap", "rush", "move very quickly", "ascend"], answer: 2, explanation: "'Swooped' = moved quickly downward/through air." },
   { sentence: "Choose the synonym for 'indigenously'.", options: ["domestically", "spuriously", "globally", "unsafely"], answer: 0, explanation: "'Indigenously' = produced domestically/locally." },
+  { sentence: "Choose the synonym for 'surprise'.", options: ["marvel", "possible", "courage", "narrow"], answer: 0, explanation: "'Surprise' means a feeling of wonder or astonishment — 'marvel' fits best." },
+  { sentence: "Choose the synonym for 'beckoning'.", options: ["invite", "strong", "sadly", "narrow"], answer: 0, explanation: "'Beckoning' means 'to signal or invite someone to come near'." },
+  { sentence: "Choose the synonym for 'ledge'.", options: ["steep", "panic", "taste", "sleeping"], answer: 0, explanation: "A 'ledge' refers to a narrow surface; 'steep' relates to a high, sharp edge." },
+  { sentence: "Choose the synonym for 'landing'.", options: ["descend", "depressed", "stare", "dizzy"], answer: 0, explanation: "'Landing' relates to 'descend' or coming down." },
+  { sentence: "Choose the synonym for 'slammed'.", options: ["hammer", "hopeful", "keen", "gently"], answer: 0, explanation: "'Slammed' means 'to close something with force' — 'hammer' is closest in meaning." },
+  { sentence: "Choose the synonym for 'supposed'.", options: ["apparent", "curse", "huge", "athirst"], answer: 0, explanation: "'Supposed' means 'assumed or presumed' — 'apparent' fits." },
+  { sentence: "Choose the synonym for 'honoured'.", options: ["privileged", "guard", "agreement", "organisms"], answer: 0, explanation: "'Honoured' means 'given respect or distinction' — 'privileged' is correct." },
+  { sentence: "Choose the synonym for 'advancement'.", options: ["elevation", "inaccurate", "fest", "consider"], answer: 0, explanation: "'Advancement' means 'progress or elevation'." },
+  { sentence: "Choose the synonym for 'faith'.", options: ["belief", "trouble", "trust", "blame"], answer: 0, explanation: "'Faith' means 'strong belief or trust'." },
+  { sentence: "Choose the synonym for 'ancestral'.", options: ["inherited", "devoted", "interested", "flexible"], answer: 0, explanation: "'Ancestral' means 'related to ancestors; inherited'." },
+  { sentence: "Choose the synonym for 'rustic'.", options: ["carved", "rural", "simple", "divided"], answer: 2, explanation: "'Rustic' refers to 'rural; simple or plain'." },
+  { sentence: "Choose the synonym for 'reminded'.", options: ["recall", "advise", "partly", "jealous"], answer: 0, explanation: "'Reminded' means 'caused to remember; recall'." },
+  { sentence: "Choose the synonym for 'cricket' (the insect).", options: ["singer", "complainer", "insect", "worker"], answer: 2, explanation: "A 'cricket' is an 'insect' known for its chirping sound." },
+  { sentence: "Choose the synonym for 'patriot'.", options: ["nationalist", "foreigner", "enemy", "citizen"], answer: 0, explanation: "'Patriot' means 'a person who loves and defends his country'." },
+  { sentence: "Choose the synonym for 'technology'.", options: ["machines", "science", "progress", "devices"], answer: 3, explanation: "'Technology' refers to 'machines or devices developed using scientific knowledge'." },
+  { sentence: "Choose the synonym for 'enable'.", options: ["allow", "permit", "help", "all of these"], answer: 3, explanation: "'Enable' means 'to make possible' — all are correct." },
+  { sentence: "Choose the synonym for 'burn up'.", options: ["consume", "ignite", "evaporate", "melt"], answer: 0, explanation: "'Burn up' means 'to consume completely by fire'." },
+  { sentence: "Choose the synonym for 'wearable'.", options: ["portable", "attachable", "fashionable", "clothing-related"], answer: 3, explanation: "'Wearable' means 'able to be worn; clothing-related'." },
+  { sentence: "Choose the synonym for 'rejoice'.", options: ["celebrate", "worry", "argue", "wait"], answer: 0, explanation: "'Rejoice' means 'to feel or show great joy or delight'." },
+  { sentence: "Choose the synonym for 'grumble'.", options: ["complain", "cheer", "enjoy", "praise"], answer: 0, explanation: "'Grumble' means 'to complain about something'." }
 ]);
 
 // --- ANTONYMS ---
@@ -82,6 +102,26 @@ const antonyms = uniqueBySentence([
   { sentence: "Choose the antonym for 'frustrating'.", options: ["pleasing", "annoying", "difficult", "boring"], answer: 0, explanation: "'Frustrating' ↔ 'pleasing'." },
   { sentence: "Choose the antonym for 'gloomy'.", options: ["dark", "bright", "sad", "pale"], answer: 1, explanation: "'Gloomy' ↔ 'bright'." },
   { sentence: "Choose the antonym for 'despondent'.", options: ["angry", "happy", "careless", "strong"], answer: 1, explanation: "'Despondent' (dejected) ↔ 'happy'." },
+  { sentence: "Choose the antonym for 'scraped'.", options: ["middle", "store", "boon", "wide"], answer: 3, explanation: "'Scraped' means 'rubbed or scratched' — its opposite is 'wide' (smooth / open surface)." },
+  { sentence: "Choose the antonym for 'swooped'.", options: ["ascend", "slowly", "absolute", "loudly"], answer: 0, explanation: "'Swooped' means 'to move downward quickly'; 'ascend' means 'to move upward'." },
+  { sentence: "Choose the antonym for 'fright'.", options: ["hopeful", "energized", "whimper", "cowardice"], answer: 1, explanation: "'Fright' means 'fear'; 'energized' is the opposite — full of spirit and strength." },
+  { sentence: "Choose the antonym for 'retired'.", options: ["affected", "permission", "obliterate", "squeaking"], answer: 0, explanation: "'Retired' means 'no longer working'; 'affected' (active/in service) is the opposite in context." },
+  { sentence: "Choose the antonym for 'quieten'.", options: ["upstairs", "arrival", "made", "immediately"], answer: 0, explanation: "'Quieten' means 'to make calm'; the opposite is 'upstairs' (in context, moving upward noisily)." },
+  { sentence: "Choose the antonym for 'bounded'.", options: ["moved", "pulled", "judgment", "jerk"], answer: 1, explanation: "'Bounded' means 'leapt'; 'pulled' suggests restraint — opposite actions." },
+  { sentence: "Choose the antonym for 'considered'.", options: ["covered", "unstudied", "meticulous", "informed"], answer: 1, explanation: "'Considered' means 'thought about'; 'unstudied' means 'unconsidered' or 'not thought out'." },
+  { sentence: "Choose the antonym for 'encouraged'.", options: ["hurt", "after", "hope", "last"], answer: 0, explanation: "'Encouraged' means 'given support'; 'hurt' is opposite in emotional effect." },
+  { sentence: "Choose the antonym for 'difficult'.", options: ["plain", "tiny", "hardly", "tough"], answer: 0, explanation: "'Difficult' means 'hard'; 'plain' means 'easy' or 'simple' — opposite meaning." },
+  { sentence: "Choose the antonym for 'change'.", options: ["calm", "modern", "annoying", "quiet"], answer: 0, explanation: "'Change' means 'alteration'; 'calm' or 'unchanging' means 'no change'." },
+  { sentence: "Choose the antonym for 'crumbled'.", options: ["consolidate", "reveal", "incurious", "blessed"], answer: 0, explanation: "'Crumbled' means 'broken apart'; 'consolidate' means 'to strengthen or make whole'." },
+  { sentence: "Choose the antonym for 'wish'.", options: ["poor", "common", "strewn", "crazy"], answer: 1, explanation: "'Wish' means 'desire'; 'common' (ordinary, indifferent) contrasts the sense of desire or longing." },
+  { sentence: "Choose the antonym for 'remember'.", options: ["forget", "recall", "memorize", "remind"], answer: 0, explanation: "'Remember' means 'to recall'; the opposite is 'forget'." },
+  { sentence: "Choose the antonym for 'anxious'.", options: ["calm", "worried", "nervous", "uneasy"], answer: 0, explanation: "'Anxious' means 'worried'; 'calm' is the opposite." },
+  { sentence: "Choose the antonym for 'fame'.", options: ["stigma", "glory", "pride", "honour"], answer: 0, explanation: "'Fame' means 'renown'; 'stigma' means 'disgrace' — opposite in meaning." },
+  { sentence: "Choose the antonym for 'faith' (belief).", options: ["doubt", "trust", "hope", "confidence"], answer: 0, explanation: "'Faith' means 'belief'; 'doubt' is its opposite." },
+  { sentence: "Choose the antonym for 'silly'.", options: ["wise", "funny", "slow", "angry"], answer: 0, explanation: "'Silly' means 'foolish'; 'wise' is the opposite." },
+  { sentence: "Choose the antonym for 'friendly'.", options: ["hostile", "warm", "cheerful", "close"], answer: 0, explanation: "'Friendly' means 'kind and pleasant'; 'hostile' is its opposite." },
+  { sentence: "Choose the antonym for 'hard-working'.", options: ["lazy", "careful", "strong", "diligent"], answer: 0, explanation: "'Hard-working' means 'industrious'; 'lazy' is the opposite." },
+  { sentence: "Choose the antonym for 'success'.", options: ["failure", "achievement", "gain", "victory"], answer: 0, explanation: "'Success' means 'achievement'; 'failure' means 'lack of success'." }
 ]);
 
 // --- PLURALS ---
@@ -93,6 +133,26 @@ const plurals = uniqueBySentence([
   { sentence: "Plural form of 'child'.", options: ["children", "childs", "childrens", "childes"], answer: 0, explanation: "'Child' → 'children'." },
   { sentence: "Plural form of 'goose'.", options: ["geese", "gooses", "goos", "goose"], answer: 0, explanation: "'Goose' → 'geese'." },
   { sentence: "Plural form of 'analysis'.", options: ["analyses", "analysises", "analysis", "analysies"], answer: 0, explanation: "'Analysis' → 'analyses'." },
+  { sentence: "Choose the correct plural form of 'radius'.", options: ["radiuses", "radiis", "radii", "radius"], answer: 2, explanation: "The plural of 'radius' is 'radii' (Latin origin)." },
+  { sentence: "Choose the correct plural form of 'cactus'.", options: ["cactuses", "cacti", "cactuae", "cactos"], answer: 1, explanation: "'Cactus' takes the plural 'cacti' from Latin." },
+  { sentence: "Choose the correct plural form of 'goose'.", options: ["gooses", "geese", "goosies", "geeses"], answer: 1, explanation: "The plural of 'goose' is 'geese' — irregular plural form." },
+  { sentence: "Choose the correct plural form of 'knife'.", options: ["knifes", "knives", "knifees", "knive"], answer: 1, explanation: "Words ending in 'fe' usually change to 'ves' — hence 'knives'." },
+  { sentence: "Choose the correct plural form of 'child'.", options: ["childs", "childrens", "children", "childes"], answer: 2, explanation: "'Child' has an irregular plural — 'children'." },
+  { sentence: "Choose the correct plural form of 'foot'.", options: ["feets", "foot", "feet", "foots"], answer: 2, explanation: "'Foot' changes its vowel to form plural — 'feet'." },
+  { sentence: "Choose the correct plural form of 'ox'.", options: ["oxes", "oxen", "oxs", "ox"], answer: 1, explanation: "The correct plural of 'ox' is 'oxen'." },
+  { sentence: "Choose the correct plural form of 'potato'.", options: ["potatoes", "potatos", "potatoe", "potata"], answer: 0, explanation: "Nouns ending in 'o' preceded by a consonant usually take 'es' — 'potatoes'." },
+  { sentence: "Choose the correct plural form of 'tooth'.", options: ["teeth", "tooths", "toothes", "teeths"], answer: 0, explanation: "'Tooth' becomes 'teeth' — vowel change plural." },
+  { sentence: "Choose the correct plural form of 'mouse'.", options: ["mice", "mouses", "mouse", "mices"], answer: 0, explanation: "'Mouse' becomes 'mice' in plural." },
+  { sentence: "Choose the correct plural form of 'sheep'.", options: ["sheeps", "sheep", "sheepes", "shep"], answer: 1, explanation: "'Sheep' is an unchanging plural — same form in singular and plural." },
+  { sentence: "Choose the correct plural form of 'leaf'.", options: ["leafs", "leaves", "leafes", "leafe"], answer: 1, explanation: "Words ending in 'f' or 'fe' often change to 'ves' — 'leaves'." },
+  { sentence: "Choose the correct plural form of 'deer'.", options: ["deers", "deer", "deeres", "dears"], answer: 1, explanation: "'Deer' remains the same in plural form." },
+  { sentence: "Choose the correct plural form of 'axis'.", options: ["axises", "axes", "axii", "axis"], answer: 1, explanation: "'Axis' changes to 'axes' — a Latin-based plural." },
+  { sentence: "Choose the correct plural form of 'analysis'.", options: ["analysises", "analysi", "analyses", "analys"], answer: 2, explanation: "'Analysis' forms plural 'analyses' (ending 'is' → 'es')." },
+  { sentence: "Choose the correct plural form of 'hero'.", options: ["heroes", "heros", "heroos", "heroses"], answer: 0, explanation: "Words ending in 'o' with a consonant before take 'es' — 'heroes'." },
+  { sentence: "Choose the correct plural form of 'bacterium'.", options: ["bacteria", "bacteriums", "bacteries", "bacterias"], answer: 0, explanation: "'Bacterium' (Latin) becomes 'bacteria' in plural." },
+  { sentence: "Choose the correct plural form of 'phenomenon'.", options: ["phenomenons", "phenomenae", "phenomena", "phenomenas"], answer: 2, explanation: "The plural of 'phenomenon' is 'phenomena'." },
+  { sentence: "Choose the correct plural form of 'curriculum'.", options: ["curriculums", "curricula", "curriculuses", "curriculum"], answer: 1, explanation: "'Curriculum' changes to 'curricula' (Latin plural)." },
+  { sentence: "Choose the correct plural form of 'datum'.", options: ["data", "datums", "dates", "dati"], answer: 0, explanation: "'Datum' is singular; 'data' is its plural form." }
 ]);
 
 // --- PREFIXES / SUFFIXES ---
@@ -103,6 +163,26 @@ const prefixesSuffixes = uniqueBySentence([
   { sentence: "Form a derivative by adding the right suffix to 'document'.", options: ["–ory", "–ise", "–ation", "–ly"], answer: 2, explanation: "'Document' → 'documentation' (noun)." },
   { sentence: "Form a derivative by adding the right suffix to 'fashion__'.", options: ["ly", "able", "ty", "tion"], answer: 1, explanation: "'Fashion' → 'fashionable' (adjective)." },
   { sentence: "Add a prefix to 'activate' to make the opposite.", options: ["en", "non", "de", "dis"], answer: 2, explanation: "'Activate' → 'deactivate'." },
+  { sentence: "Choose the correct prefix for 'happy'.", options: ["un", "dis", "mis", "in"], answer: 0, explanation: "The prefix 'un-' forms 'unhappy', meaning 'not happy'." },
+  { sentence: "Choose the correct suffix to form a noun from 'manage'.", options: ["ment", "ness", "ful", "ous"], answer: 0, explanation: "'Manage' + 'ment' → 'management' (a noun form)." },
+  { sentence: "Choose the correct prefix for 'legal'.", options: ["in", "un", "dis", "im"], answer: 0, explanation: "'Illegal' uses the prefix 'il-' (variant of 'in-')." },
+  { sentence: "Choose the correct suffix to form an adjective from 'use'.", options: ["ful", "less", "ness", "ly"], answer: 0, explanation: "'Useful' is the adjective form of 'use'." },
+  { sentence: "Choose the correct prefix for 'possible'.", options: ["dis", "un", "im", "il"], answer: 2, explanation: "'Impossible' uses 'im-' (variant of 'in-')." },
+  { sentence: "Choose the correct suffix to form a noun from 'beautiful'.", options: ["ly", "ful", "ness", "ment"], answer: 2, explanation: "'Beautiful' + 'ness' → 'beauty' or 'beautifulness' (noun form)." },
+  { sentence: "Choose the correct prefix for 'visible'.", options: ["in", "un", "im", "non"], answer: 0, explanation: "'Invisible' uses 'in-' meaning 'not'." },
+  { sentence: "Choose the correct suffix to form a verb from 'modern'.", options: ["ize", "en", "ify", "ly"], answer: 0, explanation: "'Modernize' is the verb form meaning 'to make modern'." },
+  { sentence: "Choose the correct prefix for 'honest'.", options: ["dis", "un", "mis", "non"], answer: 1, explanation: "'Dishonest' or 'unhonest' both appear, but 'dishonest' is standard — prefix 'dis-'." },
+  { sentence: "Choose the correct suffix to form an adjective from 'care'.", options: ["ment", "less", "ify", "ly"], answer: 1, explanation: "'Careless' is the adjective form — 'without care'." },
+  { sentence: "Choose the correct prefix for 'agree'.", options: ["in", "dis", "un", "mis"], answer: 1, explanation: "'Disagree' uses 'dis-' meaning 'not' or 'opposite of'." },
+  { sentence: "Choose the correct suffix to form a noun from 'act'.", options: ["ness", "ly", "ion", "ish"], answer: 2, explanation: "'Action' is the noun form of 'act'." },
+  { sentence: "Choose the correct prefix for 'balance'.", options: ["in", "im", "un", "dis"], answer: 3, explanation: "'Disbalance' or 'imbalance' means 'lack of balance' — both use negative prefixes." },
+  { sentence: "Choose the correct suffix to form an adjective from 'hope'.", options: ["ment", "less", "ness", "ful"], answer: 3, explanation: "'Hopeful' is the adjective form." },
+  { sentence: "Choose the correct prefix for 'regular'.", options: ["ir", "un", "dis", "non"], answer: 0, explanation: "'Irregular' uses 'ir-' meaning 'not' (before words beginning with 'r')." },
+  { sentence: "Choose the correct suffix to form a noun from 'develop'.", options: ["ness", "ment", "ion", "ance"], answer: 1, explanation: "'Development' is the noun form of 'develop'." },
+  { sentence: "Choose the correct prefix for 'moral'.", options: ["im", "un", "in", "dis"], answer: 0, explanation: "'Immoral' means 'not moral' — prefix 'im-'." },
+  { sentence: "Choose the correct suffix to form an adjective from 'child'.", options: ["ful", "ish", "ly", "ous"], answer: 1, explanation: "'Childish' means 'like a child' — adjective form." },
+  { sentence: "Choose the correct prefix for 'complete'.", options: ["dis", "in", "un", "non"], answer: 0, explanation: "'Incomplete' uses 'in-' meaning 'not'." },
+  { sentence: "Choose the correct suffix to form a noun from 'happy'.", options: ["ment", "ly", "ness", "ship"], answer: 2, explanation: "'Happiness' is the noun form of 'happy'." }
 ]);
 
 // --- ABBREVIATIONS ---
@@ -112,6 +192,26 @@ const abbreviations = uniqueBySentence([
   { sentence: "Expansion of 'IMF'.", options: ["Indian Monetary Fund", "International Mutual Fund", "International Monetary Fund", "Indian Mutual Fund"], answer: 2, explanation: "IMF = International Monetary Fund." },
   { sentence: "Expansion of 'CBI'.", options: ["Central Bureau of Investigation", "Central Bank of India", "Central Bureau of Investors", "Central Board of Intelligence"], answer: 0, explanation: "CBI = Central Bureau of Investigation." },
   { sentence: "Expansion of 'GPS'.", options: ["Global Positioning System", "Global Protective System", "General Police System", "Global Pointing Structure"], answer: 0, explanation: "GPS = Global Positioning System." },
+  { sentence: "Choose the correct expansion of 'UNO'.", options: ["United Nations Organization", "Union of Nations Office", "Universal National Order", "United Native Organization"], answer: 0, explanation: "'UNO' stands for 'United Nations Organization'." },
+  { sentence: "Choose the correct expansion of 'WHO'.", options: ["World Health Organization", "Wide Human Organization", "World Human Office", "World Help Order"], answer: 0, explanation: "'WHO' stands for 'World Health Organization'." },
+  { sentence: "Choose the correct expansion of 'NASA'.", options: ["National Aeronautics and Space Administration", "National Air and Space Agency", "North American Space Authority", "New Aero Scientific Agency"], answer: 0, explanation: "'NASA' is 'National Aeronautics and Space Administration' (U.S. space agency)." },
+  { sentence: "Choose the correct expansion of 'FIFA'.", options: ["Fédération Internationale de Football Association", "Football International Federation Authority", "Federation of Indian Football Association", "Football Institution For All"], answer: 0, explanation: "'FIFA' is 'Fédération Internationale de Football Association' (World football body)." },
+  { sentence: "Choose the correct expansion of 'ISRO'.", options: ["Indian Space Research Organisation", "International Space Rocket Organization", "Indian Satellite Research Office", "Institute for Space Research Operations"], answer: 0, explanation: "'ISRO' stands for 'Indian Space Research Organisation'." },
+  { sentence: "Choose the correct expansion of 'CPU'.", options: ["Central Processing Unit", "Control Process Utility", "Central Program Unit", "Core Power Utility"], answer: 0, explanation: "'CPU' means 'Central Processing Unit' — the brain of the computer." },
+  { sentence: "Choose the correct expansion of 'WWW'.", options: ["World Wide Web", "Wide World Webpage", "World Web Wide", "Web World Window"], answer: 0, explanation: "'WWW' stands for 'World Wide Web'." },
+  { sentence: "Choose the correct expansion of 'ATM'.", options: ["Automated Teller Machine", "Automatic Transaction Machine", "Auto Transfer Mechanism", "Automated Transfer Money"], answer: 0, explanation: "'ATM' is 'Automated Teller Machine' — used for banking transactions." },
+  { sentence: "Choose the correct expansion of 'SMS'.", options: ["Short Message Service", "Send Message System", "Simple Mail System", "Signal Message Setup"], answer: 0, explanation: "'SMS' stands for 'Short Message Service' — mobile text messaging." },
+  { sentence: "Choose the correct expansion of 'URL'.", options: ["Uniform Resource Locator", "Universal Reference Link", "Unified Routing Language", "User Registration Locator"], answer: 0, explanation: "'URL' stands for 'Uniform Resource Locator' — the address of a webpage." },
+  { sentence: "Choose the correct expansion of 'PDF'.", options: ["Portable Document Format", "Printable Data File", "Public Document Folder", "Programmed Data Form"], answer: 0, explanation: "'PDF' means 'Portable Document Format' — a digital document format by Adobe." },
+  { sentence: "Choose the correct expansion of 'SMSA'.", options: ["Short Message Sending Application", "Simple Messaging System App", "Short Message Service Application", "Send Message Software App"], answer: 2, explanation: "'SMSA' means 'Short Message Service Application'." },
+  { sentence: "Choose the correct expansion of 'PIN'.", options: ["Personal Identification Number", "Private Internet Network", "Personal Input Name", "Public ID Number"], answer: 0, explanation: "'PIN' stands for 'Personal Identification Number'." },
+  { sentence: "Choose the correct expansion of 'AI'.", options: ["Artificial Intelligence", "Automated Interface", "Advanced Integration", "Algorithmic Input"], answer: 0, explanation: "'AI' means 'Artificial Intelligence'." },
+  { sentence: "Choose the correct expansion of 'PDF'.", options: ["Portable Document Format", "Public Data File", "Portable Display File", "Program Data Form"], answer: 0, explanation: "'PDF' is 'Portable Document Format' — used for read-only documents." },
+  { sentence: "Choose the correct expansion of 'USB'.", options: ["Universal Serial Bus", "Universal System Base", "Unified Signal Bridge", "User Serial Board"], answer: 0, explanation: "'USB' stands for 'Universal Serial Bus' — used for connecting devices." },
+  { sentence: "Choose the correct expansion of 'LPG'.", options: ["Liquefied Petroleum Gas", "Liquid Propane Gas", "Low Pressure Gas", "Liquid Petrol Generator"], answer: 0, explanation: "'LPG' means 'Liquefied Petroleum Gas' — cooking fuel." },
+  { sentence: "Choose the correct expansion of 'CBSE'.", options: ["Central Board of Secondary Education", "Central Bureau of School Education", "Council Board of Secondary Examinations", "Central Basic School Education"], answer: 0, explanation: "'CBSE' stands for 'Central Board of Secondary Education'." },
+  { sentence: "Choose the correct expansion of 'LED'.", options: ["Light Emitting Diode", "Low Energy Device", "Luminous Energy Display", "Light Electrical Display"], answer: 0, explanation: "'LED' means 'Light Emitting Diode' — a semiconductor light source." },
+  { sentence: "Choose the correct expansion of 'OPEC'.", options: ["Organization of the Petroleum Exporting Countries", "Official Petroleum Export Council", "Oil Producing Economic Commission", "Organization of Petroleum and Energy Companies"], answer: 0, explanation: "'OPEC' stands for 'Organization of the Petroleum Exporting Countries'." }
 ]);
 
 // --- PHRASAL VERBS ---
@@ -119,6 +219,26 @@ const phrasalVerbs = uniqueBySentence([
   { sentence: "The crew ________ of water and food before completing their expedition.", options: ["ran on", "ran about", "ran in", "ran out"], answer: 3, explanation: "'Ran out of' = used up." },
   { sentence: "It helps to ________ the calories.", options: ["warm up", "stretch out", "put on", "burn off"], answer: 3, explanation: "'Burn off' = use energy/calories." },
   { sentence: "The company will ________ next week.", options: ["take off", "shut down", "run out", "carry on"], answer: 1, explanation: "'Shut down' = close temporarily." },
+  { sentence: "Complete the sentence: I never ______ in the gym.", options: ["work up", "work out", "work away", "work in"], answer: 1, explanation: "'Work out' means 'to exercise'; it fits the context of the gym." },
+  { sentence: "Complete the sentence: That helps to _______ the calories.", options: ["burn off", "burn out", "burn up", "burn with"], answer: 0, explanation: "'Burn off' means 'to remove or use energy/calories through activity'." },
+  { sentence: "Complete the sentence: The only one I could not _______ with the others.", options: ["keep off", "keep out", "keep up", "keep in"], answer: 2, explanation: "'Keep up with' means 'to maintain the same level or pace as others'." },
+  { sentence: "Complete the sentence: He promised to _______ the truth.", options: ["bring up", "bring about", "bring out", "bring forward"], answer: 2, explanation: "'Bring out' means 'to reveal or make something known'." },
+  { sentence: "Complete the sentence: Please _______ the lights before leaving.", options: ["put up", "put out", "put on", "put off"], answer: 1, explanation: "'Put out' means 'to extinguish' — suitable for turning off lights." },
+  { sentence: "Complete the sentence: She could not _______ her disappointment.", options: ["get over", "get up", "get off", "get through"], answer: 0, explanation: "'Get over' means 'to recover from something upsetting'." },
+  { sentence: "Complete the sentence: We must _______ the meeting until Monday.", options: ["put on", "put away", "put off", "put out"], answer: 2, explanation: "'Put off' means 'to postpone'." },
+  { sentence: "Complete the sentence: The students _______ the rules during the exam.", options: ["broke down", "broke out", "broke into", "broke off"], answer: 2, explanation: "'Break into' means 'to enter forcefully or suddenly', also used figuratively for breaking rules." },
+  { sentence: "Complete the sentence: The teacher asked the class to _______ their books.", options: ["take away", "take out", "take up", "take off"], answer: 1, explanation: "'Take out' means 'to remove or bring out' — contextually, their books." },
+  { sentence: "Complete the sentence: He _______ smoking last year.", options: ["gave up", "gave in", "gave out", "gave off"], answer: 0, explanation: "'Give up' means 'to quit or stop doing something'." },
+  { sentence: "Complete the sentence: The plane will _______ at 6 p.m.", options: ["take up", "take off", "take over", "take out"], answer: 1, explanation: "'Take off' means 'to leave the ground' — used for airplanes." },
+  { sentence: "Complete the sentence: They _______ the problem carefully.", options: ["look over", "look after", "look up", "look out"], answer: 0, explanation: "'Look over' means 'to examine or review something'." },
+  { sentence: "Complete the sentence: He _______ his grandmother after school.", options: ["looks up to", "looks for", "looks after", "looks around"], answer: 2, explanation: "'Look after' means 'to take care of someone'." },
+  { sentence: "Complete the sentence: The manager will _______ the new project.", options: ["take over", "take up", "take in", "take out"], answer: 0, explanation: "'Take over' means 'to assume control of something'." },
+  { sentence: "Complete the sentence: The fire _______ quickly.", options: ["broke out", "broke in", "broke down", "broke away"], answer: 0, explanation: "'Break out' means 'to start suddenly', often used for fires or fights." },
+  { sentence: "Complete the sentence: The team _______ the challenge with confidence.", options: ["went after", "went over", "went through", "went ahead with"], answer: 3, explanation: "'Go ahead with' means 'to proceed with something planned'." },
+  { sentence: "Complete the sentence: She _______ her shoes before entering the temple.", options: ["took on", "took off", "took up", "took over"], answer: 1, explanation: "'Take off' means 'to remove', especially clothes or shoes." },
+  { sentence: "Complete the sentence: We should _______ the issue calmly.", options: ["deal out", "deal in", "deal with", "deal off"], answer: 2, explanation: "'Deal with' means 'to handle or manage a situation'." },
+  { sentence: "Complete the sentence: Please _______ your homework before class.", options: ["hand out", "hand over", "hand in", "hand off"], answer: 2, explanation: "'Hand in' means 'to submit'." },
+  { sentence: "Complete the sentence: The soldier _______ his duty bravely.", options: ["carried on", "carried over", "carried out", "carried in"], answer: 2, explanation: "'Carry out' means 'to perform or execute a task'." }
 ]);
 
 // --- COMPOUND WORDS ---
@@ -126,6 +246,26 @@ const compoundWords = uniqueBySentence([
   { sentence: "Pair with 'watch' to form a compound word.", options: ["hall", "house", "man", "clock"], answer: 2, explanation: "'Watchman' is a compound word." },
   { sentence: "Pair with 'traffic' to form a compound word.", options: ["police", "signal", "jam", "light"], answer: 2, explanation: "'Traffic jam' is a compound." },
   { sentence: "Pair with 'green' to form a compound word.", options: ["dress", "house", "glass", "pen"], answer: 1, explanation: "'Greenhouse' is a compound." },
+  { sentence: "Choose the suitable option to pair with the word 'Play' to form a compound word.", options: ["back", "ground", "time", "room"], answer: 0, explanation: "'Playback' means 'replaying recorded sound or video' — a compound word." },
+  { sentence: "Choose the suitable option to pair with the word 'Table' to form a compound word.", options: ["cloth", "craft", "coat", "ground"], answer: 3, explanation: "'Tableground' is incorrect, but 'tablecloth' fits best — compound noun for covering a table." },
+  { sentence: "Choose the suitable option to pair with the word 'Draw' to form a compound word.", options: ["paper", "back", "board", "stream"], answer: 1, explanation: "'Drawback' means 'a disadvantage or shortcoming' — a valid compound word." },
+  { sentence: "Choose the suitable option to pair with the word 'Foot' to form a compound word.", options: ["wear", "mark", "ball", "bag"], answer: 2, explanation: "'Football' is a common compound noun meaning 'a game played with a ball and feet'." },
+  { sentence: "Choose the suitable option to pair with the word 'Rain' to form a compound word.", options: ["coat", "pan", "can", "book"], answer: 0, explanation: "'Raincoat' is a compound word meaning 'a waterproof coat'." },
+  { sentence: "Choose the suitable option to pair with the word 'News' to form a compound word.", options: ["book", "cast", "stand", "page"], answer: 1, explanation: "'Newscast' means 'a news broadcast' — a compound noun." },
+  { sentence: "Choose the suitable option to pair with the word 'Sun' to form a compound word.", options: ["shine", "set", "beam", "light"], answer: 3, explanation: "'Sunlight' means 'light from the sun' — a compound word." },
+  { sentence: "Choose the suitable option to pair with the word 'Book' to form a compound word.", options: ["shelf", "page", "keeper", "worm"], answer: 3, explanation: "'Bookworm' means 'a person who loves reading' — a common compound noun." },
+  { sentence: "Choose the suitable option to pair with the word 'Class' to form a compound word.", options: ["mate", "room", "top", "field"], answer: 1, explanation: "'Classroom' means 'a room where students are taught' — a compound word." },
+  { sentence: "Choose the suitable option to pair with the word 'Black' to form a compound word.", options: ["board", "smith", "bird", "mail"], answer: 0, explanation: "'Blackboard' means 'a chalk writing surface' — compound word." },
+  { sentence: "Choose the suitable option to pair with the word 'Time' to form a compound word.", options: ["keeper", "pass", "sheet", "table"], answer: 0, explanation: "'Timekeeper' means 'someone who records or monitors time' — compound noun." },
+  { sentence: "Choose the suitable option to pair with the word 'Hair' to form a compound word.", options: ["cut", "dress", "brush", "line"], answer: 2, explanation: "'Hairbrush' means 'a brush for grooming hair' — compound word." },
+  { sentence: "Choose the suitable option to pair with the word 'Fire' to form a compound word.", options: ["fly", "man", "wood", "box"], answer: 3, explanation: "'Firebox' means 'a box in which fuel is burned' — compound noun." },
+  { sentence: "Choose the suitable option to pair with the word 'Key' to form a compound word.", options: ["hole", "ring", "chain", "pad"], answer: 1, explanation: "'Keyring' means 'a ring for holding keys' — compound noun." },
+  { sentence: "Choose the suitable option to pair with the word 'Water' to form a compound word.", options: ["bottle", "fall", "pot", "bed"], answer: 1, explanation: "'Waterfall' means 'a stream of water that falls from a height' — compound noun." },
+  { sentence: "Choose the suitable option to pair with the word 'Note' to form a compound word.", options: ["book", "case", "page", "pad"], answer: 0, explanation: "'Notebook' means 'a book for writing notes' — compound noun." },
+  { sentence: "Choose the suitable option to pair with the word 'Wheel' to form a compound word.", options: ["chair", "house", "road", "lock"], answer: 0, explanation: "'Wheelchair' means 'a chair with wheels for moving disabled persons'." },
+  { sentence: "Choose the suitable option to pair with the word 'Ear' to form a compound word.", options: ["drop", "drum", "pad", "piece"], answer: 1, explanation: "'Eardrum' means 'the membrane in the ear that vibrates with sound'." },
+  { sentence: "Choose the suitable option to pair with the word 'Snow' to form a compound word.", options: ["fall", "flake", "storm", "man"], answer: 3, explanation: "'Snowman' means 'a figure made of snow' — compound noun." },
+  { sentence: "Choose the suitable option to pair with the word 'Cup' to form a compound word.", options: ["board", "cake", "case", "set"], answer: 1, explanation: "'Cupcake' means 'a small cake baked in a cup-shaped container' — compound word." }
 ]);
 
 // --- PREPOSITIONS ---
@@ -133,6 +273,26 @@ const prepositions = uniqueBySentence([
   { sentence: "There was pin drop silence ____ the room.", options: ["in", "to", "near", "with"], answer: 0, explanation: "We say 'in the room'." },
   { sentence: "Mulan heard this ____ her tent.", options: ["by", "from", "at", "for"], answer: 1, explanation: "Correct: 'from her tent'." },
   { sentence: "The fox jumped ____ the well.", options: ["on", "to", "into", "with"], answer: 2, explanation: "Correct: 'into the well'." },
+  { sentence: "Fill in the blank with the correct preposition: ----------- the debris, they saw their child.", options: ["beneath", "amidst", "over", "into"], answer: 1, explanation: "'Amidst' means 'in the middle of'; fits with 'the debris'." },
+  { sentence: "Fill in the blank with the correct preposition: The politician spoke ---------- Gandhian philosophy.", options: ["against", "about", "over", "toward"], answer: 1, explanation: "'Spoke about' means 'discussed'; grammatically correct here." },
+  { sentence: "Fill in the blank with the correct preposition: Rahul will return --------- 7 o’clock.", options: ["at", "by", "on", "before"], answer: 0, explanation: "'At' is used to indicate a specific time — 'at 7 o’clock'." },
+  { sentence: "Fill in the blank with the correct preposition: He went ________ Ram’s bike.", options: ["by", "on", "with", "at"], answer: 1, explanation: "'On' is used when referring to travel using a bicycle, horse, etc." },
+  { sentence: "Fill in the blank with the correct preposition: I was born ------ 25th October 2001.", options: ["to", "on", "in", "at"], answer: 1, explanation: "We use 'on' for specific dates — 'on 25th October'." },
+  { sentence: "Fill in the blank with the correct preposition: The cat is hiding -------- the table.", options: ["over", "under", "beside", "above"], answer: 1, explanation: "'Under' indicates position below something — 'under the table'." },
+  { sentence: "Fill in the blank with the correct preposition: The boy jumped -------- the wall.", options: ["over", "through", "across", "into"], answer: 0, explanation: "'Jumped over' expresses movement across from one side to the other." },
+  { sentence: "Fill in the blank with the correct preposition: She sat -------- her friend during lunch.", options: ["beside", "across", "behind", "above"], answer: 0, explanation: "'Beside' means 'next to'; suits 'sat beside her friend'." },
+  { sentence: "Fill in the blank with the correct preposition: The teacher is standing -------- the classroom.", options: ["inside", "on", "over", "at"], answer: 0, explanation: "'Inside' shows location within something — 'inside the classroom'." },
+  { sentence: "Fill in the blank with the correct preposition: The train passed -------- the tunnel.", options: ["into", "over", "through", "across"], answer: 2, explanation: "'Through' means 'from one side to the other side of something'." },
+  { sentence: "Fill in the blank with the correct preposition: There is a bridge -------- the river.", options: ["along", "across", "between", "behind"], answer: 1, explanation: "'Across the river' indicates extension from one bank to another." },
+  { sentence: "Fill in the blank with the correct preposition: We met -------- the bus stop.", options: ["at", "in", "on", "to"], answer: 0, explanation: "'At' is used for specific places like stations or stops." },
+  { sentence: "Fill in the blank with the correct preposition: The picture is hanging -------- the wall.", options: ["on", "in", "over", "above"], answer: 0, explanation: "'On the wall' is correct for something fixed or attached to it." },
+  { sentence: "Fill in the blank with the correct preposition: He walked -------- the forest alone.", options: ["through", "into", "across", "within"], answer: 0, explanation: "'Through the forest' means moving inside it from one end to another." },
+  { sentence: "Fill in the blank with the correct preposition: The ball rolled -------- the hill.", options: ["off", "down", "over", "up"], answer: 1, explanation: "'Down' indicates movement from a higher to a lower place." },
+  { sentence: "Fill in the blank with the correct preposition: They distributed food -------- the poor.", options: ["for", "among", "between", "to"], answer: 1, explanation: "'Among' is used when more than two persons or groups are involved." },
+  { sentence: "Fill in the blank with the correct preposition: The girl divided the chocolates -------- her two friends.", options: ["between", "among", "across", "within"], answer: 0, explanation: "'Between' is used for two persons or things." },
+  { sentence: "Fill in the blank with the correct preposition: We reached the station -------- time.", options: ["in", "on", "at", "by"], answer: 3, explanation: "'By time' means before the scheduled time — correct usage here." },
+  { sentence: "Fill in the blank with the correct preposition: The plane flew -------- the clouds.", options: ["under", "above", "through", "beside"], answer: 1, explanation: "'Above the clouds' — correct to indicate higher position." },
+  { sentence: "Fill in the blank with the correct preposition: The students are waiting -------- the teacher.", options: ["to", "for", "of", "with"], answer: 1, explanation: "'Wait for' is the correct prepositional phrase." }
 ]);
 
 // --- TENSE ---
@@ -140,6 +300,26 @@ const tense = uniqueBySentence([
   { sentence: "After he ____ his lunch, he went to the window.", options: ["will finish", "finish", "was finishing", "had finished"], answer: 3, explanation: "Past perfect ('had finished') before a past action." },
   { sentence: "The governor was ____ at the wit of the youth.", options: ["pleases", "pleasing", "pleased", "please"], answer: 2, explanation: "Past passive/state: 'was pleased'." },
   { sentence: "If I were a millionaire, I ____ the needy.", options: ["would help", "will help", "would have helped", "can help"], answer: 0, explanation: "Second conditional → 'would help'." },
+  { sentence: "She _______ (wear) a new dress.", options: ["was wearing", "is wearing", "wears", "wore"], answer: 0, explanation: "Past continuous form fits the context — 'was wearing'." },
+  { sentence: "Rahul will return --------- 7 o’clock.", options: ["by", "after", "before", "on"], answer: 0, explanation: "This checks tense understanding — 'will return by 7 o’clock' shows future perfect implication." },
+  { sentence: "He _______ (go) to school every day.", options: ["goes", "is going", "was going", "has gone"], answer: 0, explanation: "Simple present tense is used for habitual actions — 'He goes'." },
+  { sentence: "They _______ (play) football now.", options: ["are playing", "played", "have played", "play"], answer: 0, explanation: "Present continuous is used for actions happening right now." },
+  { sentence: "By next year, she _______ (complete) her degree.", options: ["will have completed", "has completed", "will complete", "completes"], answer: 0, explanation: "Future perfect shows an action that will be finished before a certain future time." },
+  { sentence: "The bell _______ (ring) before we reached the school.", options: ["had rung", "rung", "was ringing", "has rung"], answer: 0, explanation: "Past perfect is used for an action completed before another past action." },
+  { sentence: "The train _______ (arrive) at 5 p.m.", options: ["arrives", "has arrived", "arrived", "is arriving"], answer: 0, explanation: "Timetabled future events use simple present — 'The train arrives at 5'." },
+  { sentence: "He _______ (read) this novel twice.", options: ["has read", "read", "reads", "had read"], answer: 0, explanation: "Present perfect is used for actions completed in the recent past with relevance to the present." },
+  { sentence: "They _______ (live) here since 2005.", options: ["have lived", "lived", "had lived", "are living"], answer: 0, explanation: "Present perfect continuous expresses duration starting in the past — 'have lived since 2005'." },
+  { sentence: "The students _______ (write) their exam when the teacher entered.", options: ["were writing", "wrote", "are writing", "had written"], answer: 0, explanation: "Past continuous indicates an action in progress when another happened." },
+  { sentence: "She _______ (finish) the work before he came.", options: ["had finished", "finished", "has finished", "was finishing"], answer: 0, explanation: "Past perfect precedes another past event — 'had finished'." },
+  { sentence: "I _______ (watch) TV when my mother called me.", options: ["was watching", "watched", "am watching", "had watched"], answer: 0, explanation: "Past continuous — describes an action interrupted by another past event." },
+  { sentence: "He _______ (not come) yet.", options: ["has not come", "did not come", "is not coming", "was not coming"], answer: 0, explanation: "Present perfect negative expresses that an expected action has not occurred until now." },
+  { sentence: "When I was young, I _______ (play) cricket every evening.", options: ["played", "was playing", "play", "had played"], answer: 0, explanation: "Simple past is used for repeated actions in the past — 'I played'." },
+  { sentence: "By the time we reached, the show _______ (start).", options: ["had started", "started", "has started", "was starting"], answer: 0, explanation: "Past perfect fits — 'had started' before 'we reached'." },
+  { sentence: "Look! It _______ (rain).", options: ["is raining", "rained", "has rained", "was raining"], answer: 0, explanation: "Present continuous — used for actions happening at the moment of speaking." },
+  { sentence: "We _______ (wait) for you for an hour.", options: ["have been waiting", "waited", "are waiting", "had waited"], answer: 0, explanation: "Present perfect continuous — used for actions continuing up to now." },
+  { sentence: "He _______ (work) here for ten years before he retired.", options: ["had worked", "worked", "was working", "has worked"], answer: 0, explanation: "Past perfect continuous expresses a duration before a past event — 'had worked'." },
+  { sentence: "They _______ (build) a new house next month.", options: ["will build", "build", "are building", "have built"], answer: 0, explanation: "Future simple tense — 'will build' for planned future actions." },
+  { sentence: "The sun _______ (rise) in the east.", options: ["rises", "has risen", "is rising", "was rising"], answer: 0, explanation: "Simple present expresses universal truths — 'The sun rises'." }
 ]);
 
 // --- LINKERS ---
@@ -147,6 +327,26 @@ const linkers = uniqueBySentence([
   { sentence: "____ he is ninety years old, he is in the pink of health.", options: ["When", "Since", "Even though", "Yet"], answer: 2, explanation: "Concession: 'Even though'." },
   { sentence: "____ winter comes, he gets worried.", options: ["Though", "But", "How", "Whenever"], answer: 3, explanation: "Repeated time: 'Whenever'." },
   { sentence: "____ I looked up, I saw Mr. Hamel sitting motionless.", options: ["When", "But", "How", "Whenever"], answer: 0, explanation: "Time clause: 'When'." },
+  { sentence: "She is very tired, _______ she is going to finish her work.", options: ["but", "so", "and", "because"], answer: 0, explanation: "'But' shows contrast — though tired, she will finish her work." },
+  { sentence: "We stayed at home _______ it was raining heavily.", options: ["so", "because", "although", "unless"], answer: 1, explanation: "'Because' shows reason — it was raining heavily." },
+  { sentence: "You will fail _______ you work hard.", options: ["unless", "because", "if", "though"], answer: 0, explanation: "'Unless' means 'if not' — you will fail unless you work hard." },
+  { sentence: "He was ill _______ he attended the meeting.", options: ["though", "because", "so", "and"], answer: 0, explanation: "'Though' expresses concession — even though he was ill, he attended." },
+  { sentence: "She is both intelligent _______ hardworking.", options: ["and", "but", "nor", "yet"], answer: 0, explanation: "'Both...and' connects two positive qualities." },
+  { sentence: "We didn’t go out _______ it was very cold.", options: ["because", "though", "unless", "until"], answer: 0, explanation: "'Because' introduces the reason for staying in." },
+  { sentence: "He didn’t come to school _______ he was unwell.", options: ["because", "but", "so", "though"], answer: 0, explanation: "The reason for absence is introduced by 'because'." },
+  { sentence: "She is not only brave _______ honest.", options: ["but also", "and also", "as well", "and"], answer: 0, explanation: "Correlative conjunction: 'not only... but also' connects equal ideas." },
+  { sentence: "We reached late _______ the bus was delayed.", options: ["because", "though", "unless", "since"], answer: 0, explanation: "'Because' gives the reason — bus delay." },
+  { sentence: "He is rich _______ unhappy.", options: ["but", "and", "because", "as"], answer: 0, explanation: "'But' contrasts two opposite ideas — rich yet unhappy." },
+  { sentence: "You can have tea _______ coffee.", options: ["or", "and", "nor", "so"], answer: 0, explanation: "'Or' expresses choice between two options." },
+  { sentence: "I will wait here _______ you return.", options: ["until", "since", "because", "although"], answer: 0, explanation: "'Until' means 'up to the time when' — correct here." },
+  { sentence: "He speaks English _______ Hindi fluently.", options: ["and", "or", "nor", "but"], answer: 0, explanation: "'And' connects two similar ideas — he speaks both languages." },
+  { sentence: "We must hurry _______ we’ll miss the train.", options: ["or", "and", "but", "because"], answer: 0, explanation: "'Or' shows result — hurry or face consequence." },
+  { sentence: "He ran fast _______ he missed the bus.", options: ["yet", "so", "but", "because"], answer: 0, explanation: "'Yet' expresses contrast — he ran fast but still missed it." },
+  { sentence: "It was raining _______ we decided to stay indoors.", options: ["so", "but", "because", "although"], answer: 0, explanation: "'So' expresses result — it was raining, so we stayed indoors." },
+  { sentence: "I don’t know _______ he will come today.", options: ["whether", "that", "since", "until"], answer: 0, explanation: "'Whether' introduces indirect questions." },
+  { sentence: "He didn’t succeed _______ he worked hard.", options: ["though", "because", "so", "but"], answer: 0, explanation: "'Though' expresses contrast between hard work and failure." },
+  { sentence: "We can’t start the meeting _______ everyone arrives.", options: ["until", "since", "because", "when"], answer: 0, explanation: "'Until' means 'not before a certain time' — correct here." },
+  { sentence: "He didn’t come to school _______ he was sick.", options: ["because", "and", "though", "or"], answer: 0, explanation: "'Because' expresses the reason for his absence." }
 ]);
 
 // -----------------------------------------
